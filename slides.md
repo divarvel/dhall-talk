@@ -1,4 +1,4 @@
-% Config As Code? Yup, but properly. Have some Dhall
+% Config As Code?<br>Yup, but properly.<br>Have some Dhall
 % Clément Delafargue
 % web2day 2019-06-05
 
