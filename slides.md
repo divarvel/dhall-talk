@@ -395,10 +395,107 @@ simple functions
 
 ---
 
+## 😍 Types 😍
+
+<details role="note">
+for complex configs (especially when there is no config checker available)  
+</details>
+
+---
+
+# Scalars
+
+```
+let port    : Natural = 8080
+let offset  : Integer = +12
+let ratio   : Double  = 12.0
+let string  : Text    = "just a string"
+let boolean : Bool    = True
+in …
+```
+
+<details role="note">
+all literals are unambiguous (take that, yaml)
+</details>
+
+---
+
+# Composite
+
+```
+
+
+let maybe : Optional Natural =
+      Some 8080
+let list : List Text =
+      ["a", "string"]
+let record : { key : Text } =
+      { key = "value" }
+in  …
+```
+
+<details role="note">
+list are homogeneous  
+records types are structural
+</details>
+
+---
+
+# Records
+
+```
+let User = { name : Text }
+let Admin = User //\\ { level : Text }
+let localAdmin: Admin =
+      { name = "John Doe"
+      , level = "local"
+      }
+in localAdmin
+```
+
+<details role="note">
+record types can be aliased and combined to avoid repetition
+</details>
+
+---
+
+## Union types
+
+<details role="note">
+real config files are messy
+</details>
+
+---
+
+<small>
+```
+let Host =
+      { address : Text
+      , port : Natural
+      }
+let Socket =
+      < LocalFile : Text
+      | RemoteHost : Host
+      >
+in  Socket.RemoteHost
+      { address = "10.0.0.1"
+      , port = 8080
+      }
+```
+</small>
+
+<details role="note">
+you can get back heterogeneous lists with union types
+</details>
+
+
+---
+
 ## No turing completeness
 
 <details role="note">
-general recursion is not allowed in the language
+general recursion is not allowed in the language  
+recursive structures are not directly possible  
 </details>
 
 ---
@@ -406,8 +503,9 @@ general recursion is not allowed in the language
 ## State of the art type system
 
 <details role="note">
-all the interesting properties of dhall are thanks to the choice of
-a good type system.
+it's not external checks, it's a type system proven to be sound  
+all the interesting properties of dhall are thanks to the choice  
+of a good type system.
 </details>
 
 ---
@@ -637,6 +735,50 @@ cat config.dhall \
 you can normalize almost everything into json and yaml (except functions):  
 primitive types, records, lists, unions
 </details>
+
+---
+
+<small>
+```
+let
+  makeUser = \(user : Text) -> \(groups: List Text) ->
+    { name = user
+    , metadata =
+      { groups = groups
+      , userType = "regular"
+      }
+    }
+in { users =
+       [ makeUser "bill" ["wheel"]
+       , makeUser "joe" ["yolo"]
+       , makeUser "roy-eastman-kodak" ["clarita"]
+       ]
+   }
+```
+</small>
+
+---
+
+<small>
+```
+users:
+- name: bill
+  metadata:
+    groups:
+    - wheel
+    userType: regular
+- name: joe
+  metadata:
+    groups:
+    - yolo
+    userType: regular
+- name: roy-eastman-kodak
+  metadata:
+    groups:
+    - clarita
+    userType: regular
+```
+</small>
 
 ---
 
