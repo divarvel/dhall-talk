@@ -678,13 +678,11 @@ config is type checked by dhall, then translated to haskell
 
 # Language bindings
 
-<ul style="font-size: 1em;">
-<li>haskell</li>
-<li>nix</li>
-<li>ruby</li>
-<li>java (via eta)</li>
-<li>go (wrapped executable)</li>
-</ul>
+- haskell
+- nix
+- ruby
+- java (via eta)
+- go (wrapped executable)
 
 
 <details role="note">
@@ -698,12 +696,10 @@ typse in go (but normalization is complete)
 
 # Language bindings (in progress)
 
-<ul style="font-size: 1em;">
-<li>rust</li>
-<li>clojure</li>
-<li>purescript</li>
-<li>python</li>
-</ul>
+- rust
+- clojure
+- purescript
+- python
 
 <details role="note">
 work in progress As soon as the rust impl is done, it may be easier  
@@ -844,3 +840,9 @@ try to put you in your ops team shoes
 work with them to find the abstraction level everyone is comfortable in
 </details>
 
+---
+
+# Resources
+
+- <https://dhall-lang.org/>
+- <https://github.com/dhall-lang/dhall-lang/wiki>
