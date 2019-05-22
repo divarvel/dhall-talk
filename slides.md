@@ -399,6 +399,9 @@ simple functions
 
 <details role="note">
 for complex configs (especially when there is no config checker available)  
+faster feedback loop  
+great tool to reason about your config files  
+(useful to fight complexity)
 </details>
 
 ---
