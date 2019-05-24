@@ -648,6 +648,31 @@ the generated output.
 
 ---
 
+## Editor support
+
+<details role="note">
+syntax highlighting in many editors, some of them have extra  
+support
+</details>
+
+---
+
+![](./assets/dhall-diagnostics.gif)
+
+<details role="note">
+dhall-lsp work in progress, so that should benefit everyone  
+</details>
+
+---
+
+![](./assets/dhall-to-json.png)
+
+<details role="note">
+live-preview of the config output
+</details>
+
+---
+
 ## How to use it
 
 <details role="note">
