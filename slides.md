@@ -300,7 +300,7 @@ made just for this (and some more!)
 <details role="note">
 not whitespace significant
 records are defined with `{` / `=` / `,`
-records are defined with `[` / `,`
+lists are defined with `[` / `,`
 multiline strings, naturals, booleans
 </details>
 
@@ -583,8 +583,6 @@ in map Natural Bool Natural/even [ 2, 3, 5 ]
 
 <details role="note">
 you can freeze imports to avoid changes *and* use cache
-socket(AF_INET6, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 0
-open("/home/clementd/.cache/dhall/c60cc328c8aab8253e7372ae973ab7fd7b37448dc5bd9602f8e17b52a950d57b", O_RDONLY|O_NOCTTY|O_NONBLOCK) = 0
 </details>
 
 ---
